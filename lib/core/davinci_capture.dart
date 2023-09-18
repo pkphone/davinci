@@ -7,7 +7,7 @@ import 'package:davinci/core/brandtag_configuration.dart';
 import 'package:davinci/core/davinci_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:gallery_saver/gallery_saver.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -221,6 +221,6 @@ class DavinciCapture {
 
     /// The image is saved with the file path and to the album if defined,
     /// if the album is null, it saves to the all pictures.
-    await GallerySaver.saveImage(file.path, albumName: album);
+    await ImageGallerySaver.saveImage(file.readAsBytesSync(), name: album);
   }
 }
